@@ -6,9 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
-/**
- * Created by Brendan on 4/10/2017.
- */
+
 @Repository
 @Transactional
 public interface MenuDao extends CrudRepository<Menu, Integer> {
