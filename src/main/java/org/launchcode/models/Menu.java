@@ -7,6 +7,7 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Menu {
@@ -20,7 +21,7 @@ public class Menu {
     private String name;
 
     @ManyToMany
-    private ArrayList<Cheese> cheeses;
+    private List<Cheese> cheeses;
 
     public Menu(String name) {
         this.name = name;
@@ -42,6 +43,14 @@ public class Menu {
 
     public void addItem(Cheese item) {
         cheeses.add(item);
+    }
+
+    public void removeItem(Cheese item) {
+        cheeses.remove(item);
+    }
+
+    public List<Cheese> getItems() {
+        return cheeses;
     }
 
 }
